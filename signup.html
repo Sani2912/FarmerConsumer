@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+                <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+                <script>
+                $(window).load(function() {
+                    // Animate loader off screen
+                    $(".se-pre-con").fadeOut("slow");;
+                });
+            </script>
+            <title>signup</title>
+            <meta charset="utf-8">
+            <style>
+                #main{
+                    background-color:black;
+                    color:white;
+                    height:550px;
+                    width:1000px;
+                    margin-left:300px;
+                    margin-top:100px;
+                    border-radius: 20px;
+                }
+                body{
+                    background-image:url("images/ebg.png");
+                    background-size:100%; 
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                }
+                #sign{
+                    margin-top: 80px;
+                    margin-left: 60px;
+                    height:400px;
+                    width:300px;
+                    float:left;
+                }
+                #inner{
+                    padding-top:40px;
+                    padding-left:450px; 
+                }
+                #formhead{
+                    font-family:Georgia;
+                }
+                input[type=text]{
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    color:white;              
+                    }
+                    input[type=number]{
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    color:white;              
+                    }
+                    input[type=password]{
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    color:white;              
+                    }
+                #name{
+                    width:370px;
+                }
+                input[type=email] {
+                    background: transparent;
+                    border: none;
+                    color:white;
+                    border-bottom: 1px solid white;
+                }
+                input{
+                    height:30px;
+                }
+                input[type=submit]{
+                    background-color: #4CAF50;
+                    border: none;
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 2px 2px;
+                    cursor: pointer;
+                }
+                #num{
+                    margin-left:50px;
+                }
+                #check{
+                    height:15px;
+                }
+                #submit{
+                    /* border:inset;
+                    background-color:green;
+                    color:white;
+                    width:100px;
+                    font-size:18px;
+                    margin-right:100px; */
+    height: 40px;
+    width:100px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    border:0;
+                }
+                a{
+                    color:white;
+                }
+                #long{
+                    display:none;
+                }
+                #lat{
+                    display:none;
+                }
+                .no-js #loader { display: none;  }
+                    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+                    .se-pre-con {
+                        position: fixed;
+                        left: 0px;
+                        top: 0px;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 9999;
+                        background: url("images/loader2.gif") center no-repeat #fff;
+                    }
+            </style>
+            <script>
+                function initGeolocation()
+                    {
+                        if( navigator.geolocation )
+                        {
+                        // Call getCurrentPosition with success and failure callbacks
+                        navigator.geolocation.getCurrentPosition( success, fail );
+                        }
+                        else
+                        {
+                        alert("Sorry, your browser does not support geolocation services.");
+                        }
+                    }
+                function success(position)
+                    {
+
+                        document.getElementById('long').value = position.coords.longitude;
+                        document.getElementById('lat').value = position.coords.latitude
+                    }
+                function fail(position)
+                    {
+                        alert("Location Access denied,Try turning on GPS.");
+                    }
+            </script>
+        </head>
+        <body>
+                <div class="se-pre-con"></div>
+            <div id="main">
+                <img src="images/sign.png" id="sign">
+                <div id="inner">
+                <h1 id="formhead">REGISTRATION INFO</h1><br/>
+                <form action="/registerdo" method="POST">
+                    <input type="text" placeholder="Your Name" id="name" name="name" required><br/><br/><br/>
+                    <input type="email" placeholder="Email Address" id="mail" name="mail" required>
+                    <input type="number" placeholder="Mobile Number" id="num" name="num" required><br/><br><br/>
+                    <input type="password" placeholder="Password" id="passwd" name="passwd" required><br/><br><br/>
+                    <p id="loc">Location Access</p><input type="checkbox" id="check" name="check" onchange="initGeolocation();" required><br/><br><br/>
+                    <INPUT TYPE="text" NAME="long" ID="long" VALUE="">
+                    <INPUT TYPE="text" NAME="lat" ID="lat" VALUE="">
+                    <input type="submit" id="submit" name="submit">
+                    Alredy have an account ?<a href="login"><b> Login Here</b></a>
+                </form>
+                </div>
+            </div>
+        </body>
+    </html>

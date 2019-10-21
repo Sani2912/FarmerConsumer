@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Customer</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script>
+                function call(){
+                    var a=document.getElementById("option").value;
+                    if(a==2){
+                        document.getElementById("form2").submit();
+                    }
+                    if(a==3){
+                        document.getElementById("form1").submit();
+                    }
+                }
+            </script>
+            <style>
+                body{
+                    background-attachment: fixed;
+                    background-size:100%;
+                    background-image:url("https://i.imgur.com/QNSEwNs.png");
+                }
+                #productlist{
+                    background-attachment: fixed;
+                    background-size:100%;
+                    background-image:url("");
+                    background-color: aliceblue;
+                    padding:20px;
+                    border-radius: 25px;
+                    margin:40px;
+                    float:left;
+                    width:300px;
+                    margin-left:100px;
+                }
+                input[type=submit]{
+                    height: 40px;
+                    width:100px;
+                    border-radius: 10px;
+                    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+                    border:0;
+                }
+                #headim{
+                    width:200px;
+                    height:200px;
+                }
+                #topd{
+                   background-color: aliceblue;
+                   margin-top:0px;
+                   display: inine-block;
+                   position: fixed;
+                }
+                #search{
+                    border-radius: 20px;
+                    border:0;
+                    height:30px;
+                    width:400px;
+                }
+                form{
+                    overflow: hidden;
+                }
+                @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+                body { margin: 30px; }
+                .search {
+                position: relative;
+                color: #aaa;
+                font-size: 16px;
+                }
+
+                .search input {
+                width: 250px;
+                height: 32px;
+                background: #fcfcfc;
+                border: 1px solid #aaa;
+                border-radius: 5px;
+                box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+                }
+                .search input { text-indent: 32px;}
+                .search .fa-search { 
+                position: absolute;
+                top: 8px;
+                left: 760px;
+                }
+                #search{
+                    margin-left:750px; 
+                }
+                #option{
+                    margin-left: 1250px;
+                    height:20px;
+                    width:150px;
+                }
+                #form{
+                    position:absolute;
+                    top:10px;
+                }
+
+                #heading{
+                    color:#FFD700;
+                    font-family: Courier New;
+                    font-size: 40px;
+                }
+                #logo{
+                    margin-left:0px;
+                }
+                #quan{
+                    border-radius: 10px;
+                    border:0;
+                    padding:5px;
+                    background-color:#f2f2f2 ;
+                }
+            </style>
+        </head>
+        <body>
+            <p id="topd">
+                <div class="search">
+                        <img src="images/final.png" id="logo">
+                        <form action="search" id="form" method="POST">
+                <span class="fa fa-search"></span><input type="text" name="search" id="search" placeholder="Search item">
+                <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
+                <input type="hidden" name="longitude" value=<%= products[1].lon %>>
+            </form>  
+            </div>
+            <br/>
+            <select onchange="call()" id="option" label="sort by">
+                    <option value="1" hidden>Sort By</option>
+                    <option value="2">Sort By price</option>
+                    <option value="3">Sort By Distance</option>
+            </select>
+        </p>
+            <form action="list" method="POST" id="form1">
+                    <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
+                    <input type="hidden" name="longitude" value=<%= products[1].lon %>>
+            </form>
+            <form action="listsort" method="POST" id="form2">
+                    <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
+                    <input type="hidden" name="longitude" value=<%= products[1].lon %>>
+            </form>
+            <%- include("E:/FarmerConsumer/functions.ejs") %>
+            <% del(products) %>
+            <% products.forEach(function(products){ %>
+                <div id="productlist">
+                    <h1><%= products.product %></h1> 
+                    <h2>Price per KG-<%= products.price %> Rs</h2><br/>
+                    Seller - <%= products.email %> <br/>    
+                    Distance - <%= products.distance %>km<br/><br/>
+                    Quantity(Minimum <%= products.mq %>KG)
+                    <form action="buy" method="POST">
+                        <input type="hidden" name="farmer" id="farmer" value=<%= products.email %>>
+                        <input type="hidden" name="product" value=<%= products.product %>>
+                        <input type="hidden" name="price" value=<%= products.price %>>
+                        <input type="hidden" name="mq" value=<%= products.mq %>>
+                        <input type="number" name="quan" id="quan" placeholder="In KG">
+                        <input type="submit" value="Buy Now➜">
+                    </form>
+                </div>
+            <% }) %> 
+        </body>
+    </html>

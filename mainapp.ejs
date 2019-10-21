@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+                <script>
+                $(window).load(function() {
+                    $(".se-pre-con").fadeOut("slow");
+                });
+                </script>
+            <title>Home</title>
+            <style>
+  body{
+                    background-image:url("images/ebg.png");
+                    background-size:100%; 
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                }
+#head{
+  overflow: hidden; 
+  border-right: .15em; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(40),
+    blink-caret .75s step-end infinite;
+  font-size: 40px;
+  background: -webkit-linear-gradient(#c2f556, #22d4c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+#a{
+    background-image:url("images/farmin.jpg");
+    background-repeat:no-repeat;
+    margin-left:200px;
+    margin-top:100px;
+    height:400px;
+    width:650px;
+    cursor: pointer;
+}
+#b{
+    background-image:url("images/consumerin.jpg");
+    background-repeat:no-repeat;
+    margin-left:600px;
+    margin-top:100px;
+    margin-bottom:100px;
+    height:400px;
+    width:650px;
+    cursor: pointer;
+}
+#a:hover,#b:hover{
+    transform:scale(1.2);
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+}
+#ah1{
+  margin-left:450px;
+  margin-top:180px;
+  position:absolute;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  z-index: 2;
+}
+#ap{
+  margin-left:140px;
+  margin-top:380px;
+  position:absolute;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  z-index:2;
+  font-size:30px;
+}
+#ah2{
+  margin-left:850px;
+  margin-top:700px;
+  position:absolute;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  z-index: 2;
+}
+#ap1{
+  margin-left:545px;
+  margin-top:900px;
+  position:absolute;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  z-index:2;
+  font-size:30px;
+}
+#farmer{
+  display:none;
+}
+#consumer{
+  display:none;
+}
+#side{
+  float:left;
+  position:absolute;
+  width:300px;
+  height:720px;
+  background-color: ;
+  background-image: linear-gradient(aqua, rgba(91,237,71));
+  margin-left:10px;
+  margin-top:10px;
+}
+#content{
+  position:absolute;
+  margin-left:310px;
+  background-color: rgba(255, 0, 0, 0.4);
+  height:720px;
+  width:1200px;
+  margin-top:10px;
+}
+#viewc{
+  display:none;
+}
+#view:hover{
+  cursor: pointer;
+  background-color:rgba(187, 250, 236);
+  border:1;
+  border-color:rgba(220, 89, 240);
+  border-radius:10px;
+}
+#add:hover{
+  cursor: pointer;
+  background-color:rgba(187, 250, 236);
+  border:1;
+  border-color:rgba(220, 89, 240);
+  border-radius:10px;
+}
+#del:hover{
+  cursor: pointer;
+  background-color:rgba(187, 250, 236);
+  border:1;
+  border-color:rgba(220, 89, 240);
+  border-radius:10px;
+}
+#delc{
+  display:none;
+}
+#addc{
+  display:none;
+}
+#welcome{
+  margin-left:200px;
+  margin-top:130px;
+  height:100px;
+}
+#content{
+  background-image: url("images/gradient.png");
+  background-attachment: fixed;
+  background-size: 100%;
+}
+#forma{
+  background-color:white;
+  margin-top:120px;
+  margin-left:370px;
+  margin-right:400px;
+  padding:30px;
+  border-radius:20px;
+}
+#formb{
+  background-color:white;
+  margin-top:150px;
+  margin-left:390px;
+  margin-right:400px;
+  padding:30px;
+  border-radius:20px;
+}
+input[type=submit]{
+  height: 40px;
+    width:300px;
+    border-radius:15px;
+    border:0;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  color:white;
+  cursor: pointer;
+}
+input{
+  background: transparent;
+  border: none;
+  height:30px;
+  border-bottom: 1px solid #808080;
+  width:300px;
+}
+body{
+  font-family: arial;
+}
+#farmer{
+  border-radius: 10%;
+}
+#product{
+  background-color:white;
+  color:black;
+  margin:30px;
+  border-radius: 15px;
+  padding:20px;
+}
+#submit{
+  position:relative;
+  top:10px;
+  left:200px;
+}
+           </style>
+           <script>
+             $(document).ready(function(){
+               $("#ah1").hide();
+               $("#ap").hide();
+               $("#ah2").hide();
+               $("#ap1").hide();
+               $("#a").mouseover(function(){
+                $("#ah1").slideDown();
+                $("#ap").fadeIn();
+               });
+               $("#a").mouseout(function(){
+                 $("#ah1").slideUp();
+                 $("#ap").fadeOut();
+               });
+               $("#a").click(function(){
+                hidesub();
+               });
+               $("#b").mouseover(function(){
+                $("#ah2").slideDown();
+                $("#ap1").fadeIn();
+               });
+               $("#b").mouseout(function(){
+                 $("#ah2").slideUp();
+                 $("#ap1").fadeOut();
+               });
+               $("#b").click(function(){
+                hidesub1();
+                $("#form").submit();
+               });
+               $("#view").click(function(){
+                 showprod();
+               });
+               $("#del").click(function(){
+                 showdel();
+               });
+               $("#add").click(function(){
+                 showadd();
+               });
+             });
+           </script>
+           <script type="text/javascript">
+             function hidesub(){
+               document.getElementById("first").style.display="none";
+               document.getElementById("farmer").style.display="block";
+             }
+             function hidesub1(){
+              document.getElementById("first").style.display="none";
+              document.getElementById("consumer").style.display="block";
+             }
+             function showdel(){
+              document.getElementById("addc").style.display="none";
+              document.getElementById("viewc").style.display="none";
+              document.getElementById("welcome").style.display="none";
+              document.getElementById("delc").style.display="block";
+             }
+             function showadd(){
+              document.getElementById("viewc").style.display="none";
+              document.getElementById("delc").style.display="none";
+              document.getElementById("welcome").style.display="none";
+              document.getElementById("addc").style.display="block";
+             }
+             function showprod(){
+              document.getElementById("delc").style.display="none";
+              document.getElementById("addc").style.display="none";
+              document.getElementById("welcome").style.display="none";
+              document.getElementById("viewc").style.display="block";
+             }
+           </script>
+        </head>
+        <body>
+            <div class="se-pre-con"></div>
+                <div id="first"> 
+                        <h1 id="head">HELLO <%= name%>!</h1>
+                        <h1 id="ah1">Farmer</h1>
+                        <p id="ap">Login as Farmer,start selling and Earn in smart way!</p>
+                        <h1 id="ah2">Customer</h1>
+                        <p id="ap1">Login as Customer,start buying with great savings!</p>
+                        <div id="a"></div>
+                        <div id="b"></div>
+                </div>
+              <div id="farmer">
+                    <div id="side">
+                        <br/><br/>
+                      <h1 align="center" id="view">My Products</h1><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                      <h1 align="center" id="add">Add Product</h1><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                      <h1 align="center" id="del">Remove Product</h1>
+                    </div>
+                    <div id="content">
+                      <div id="viewc">
+                        <div>
+                          <% if(products.length > 0){ %>
+                           <% products.forEach(function(products){ %>
+                            <div id="product">
+                              <h1><%= products.product %></h1>
+                               Price per KG - <%= products.price %><br/> 
+                               <form action="predict" method="POST">
+                                  <input type="hidden" name="product" id="product" value=<%= products.product %> >
+                                  <input type="hidden" name="farmer" id="farmer" value=<%= products.email %> >
+                                  <input type="submit" value="Predict Sales" id="submit">
+                               </form>
+                            </div>
+                            <% }) %>
+                          <% }else{ %>
+                            <p>No products added yet!</p>
+                          <% } %>
+                        </div>
+                      </div>
+                      <div id="addc">
+                        <div id="forma">
+                            <h1>Product Details</h1>
+                        <form action="addp" method="POST">
+                          NAME<br/><input type="text" name="productname" id="productname" required><br/><br/>
+                          TOTAL QUANTITY<br/><input type="number" name="totalquantity" required><br/><br/>
+                          MINIMUM QUANTITY PER CUSTOMER<br/><input type="number" name="maxquantity" required><br/><br/>
+                          PRICE PER KG<br/><input type="number" name="price" required><br/><br/>
+                          <input type="hidden" name="latitude" id="latitude" value=<%= latitude %>>
+                          <input type="hidden" name="longitude" value=<%= longitude %>>
+                          <input type="hidden" name="emailid"  value=<%= email %>><br/>
+                          <input type='submit' value="Add product➜">
+                        </form> 
+                      </div>
+                      </div>
+                      <div id="delc">
+                          <div id="formb">
+                              <h1>Product Details</h1>
+                        <form action="deletep" method="POST">
+                            Enter name of product to be deleted<input type="text" name="product">
+                            <input type="hidden" name="farmer" id="farmer" value=<%= email %>><br/><br/>
+                            <input type='submit' value="Delete product➜">
+                        </form>
+                        </div>
+                      </div>
+                    <div id="welcome">
+                      <img src="https://www.animatedimages.org/data/media/707/animated-welcome-image-0031.gif" border="0" alt="animated-welcome-image-0112" id="welcome"/>
+                    </div>
+                  </div>
+              </div>
+                <div id="consumer">
+                   <form action="list" method="POST" id="form">
+                      <input type="hidden" name="latitude" id="latitude" value=<%= latitude %>>
+                      <input type="hidden" name="longitude" value=<%= longitude %>>
+                   </form>
+                </div>
+        </body>
+    </html>

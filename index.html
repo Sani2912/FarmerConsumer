@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+                <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+                <script>
+                $(window).load(function() {
+                    // Animate loader off screen
+                    $(".se-pre-con").fadeOut("slow");;
+                });
+            </script>
+            <title>Farmer-Consumer</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="utf-8">
+            <style>
+                #topd{
+                    background-image: url("images/home.jpg");
+                    background-size:100%;
+                    height:650px;
+                    width:100%;
+                    padding-top:30px;
+                    overflow: hidden;
+                    border-radius:0 0 0 70% / 20%;
+                }
+                a{
+                    text-decoration: none;
+                }
+                button {
+                    width: 150px;
+                    height: 40px;
+                    background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
+                    border: none;
+                    border-radius: 5px;
+                    position: relative;
+                    border-bottom: 4px solid #2b8bc6;
+                    color: #fbfbfb;
+                    font-weight: 600;
+                    font-family: 'Open Sans', sans-serif;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+                    font-size: 20px;
+                    text-align: left;
+                    text-indent: 5px;
+                    box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+                    cursor: pointer;
+                    /* Just for presentation */  
+                    display: block;
+                    margin-left:1200px;
+                    margin-bottom: 20px;
+                    }
+                    button:active {
+                    box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+                    top: 1px;
+                    }
+
+                    button:after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    border-top: 20px solid #187dbc;
+                    border-bottom: 20px solid #187dbc;
+                    border-left: 16px solid transparent;
+                    border-right: 20px solid #187dbc;
+                    position: absolute;
+                    opacity: 0.6; 
+                    right: 0;
+                    top: 0;
+                    border-radius: 0 5px 5px 0;  
+                    }
+                    #icon{
+                        height:120px;
+                        position:absolute;
+                        left:180px;
+                        top:290px;
+                    }
+                    #main_head{
+                        position:absolute;
+                        top:280px;
+                        left:300px;
+                        font-family:Verdana;
+                        font-size:60px;
+                        color:white;
+                    }
+                    #quote{
+                        color:rgb(252, 249, 251);
+                        font-family:;
+                        position:absolute;
+                        top:500px;
+                        font-size:30px;
+                        left:300px;
+                    }
+                    #snd_head{
+                        margin-left:140px;
+                        font-family:fantasy;
+                    }
+                    p{
+                        font-size:25px;
+                        position:absolute;
+                        left:150px;
+                        right:500px;
+                    }
+                    #sun{
+                        height:280px;
+                        width:300px;
+                        right:100px;
+                        position:absolute;
+                    }
+                    #trd_head{
+                        position:absolute;
+                        text-align:center;
+                        font-family: fantasy;
+                        top:1100px;
+                        left:700px;
+                    }
+                    #easy{
+                        position:absolute;
+                        height:100px;
+                        width:100px;
+                        top:1200px;
+                        left:300px;
+                    }
+                    #one{
+                        position:absolute;
+                        top:1300px;
+                        left:280px;
+                    }
+                    #easy1{
+                        position:absolute;
+                        top:1200px;
+                        left:720px;
+                        height:100px;
+                        width:100px;
+                    }
+                    #onee{
+                        position:absolute;
+                        top:1300px;
+                        left:700px;
+                    }
+                    #easy2{
+                        position:absolute;
+                        top:1200px;
+                        left:1100px;
+                        height:100px;
+                        width:150px;
+                    }
+                    #oneee{
+                        position:absolute;
+                        top:1300px;
+                        left:1100px;
+                    }
+                    #foot{
+                        top:1350px;
+                        position: absolute;
+                    }
+                    hr{
+                        margin-top:350px;
+                        background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+                        height:5px;
+                    }
+                    .no-js #loader { display: none;  }
+                    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+                    .se-pre-con {
+                        position: fixed;
+                        left: 0px;
+                        top: 0px;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 9999;
+                        background: url("images/loader2.gif") center no-repeat #fff;
+                    }
+            </style>
+        </head>
+        <body>
+            <div class="se-pre-con"></div>
+            <div id="topd">
+                <h1 id="main_head">Farmer to Consumer</h1>
+                <h3 id="quote">Online Farmers market <br/>where farmers can directly interact with Consumers.</h3>
+                <img src="images/farmer.png" id="icon">
+                <a href="signup"><button class="button">Sign up</button></a>
+            </div>
+            <div id="snd">
+                <h1 id="snd_head">Why this platform?</h1>
+                <p>FARMER TO customer lets each farmer show their produce on an exciting and advanced platform, and at no cost!   <br/><br/>
+
+                This is your chance to reveal your farm to several new people, to several customers who are wanting to shop for fresh produce directly from the growers. the ability of the distribution chains has created it virtually not possible for agriculture to be profitable – a fact that everybody is aware of. solely by supporting and promoting direct sales to the patron will the farmer relish the profit margins he deserves for his work.</p>
+                <img src="images/image.png" id="sun">
+                <hr/>
+                <h1 id="trd_head">Features</h1>
+                <figure>
+                <img src="images/easy.png" id="easy">
+                <h2 id="one">Easy Access</h2>
+                <img src="images/oneclick.png" id="easy1">
+                <h2 id="onee">Sales on a click</h2>
+                <img src="images/security.png" id="easy2">
+                <h2 id="oneee">Advanced Security</h2>
+            </figure>
+            <h4 id="foot">All rights reserved FARMER</h4>
+            </div>
+        </body>
+    </html>

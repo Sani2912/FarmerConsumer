@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Results</title>
+            <meta charset="utf-8">
+            <style>
+            #head1{
+                font-family: Lucida Sans;
+            }
+            table{
+                margin-left:450px;
+                margin-top:100px;
+                width:600px;
+                height:400px;  
+                border-collapse:collapse;              
+            }
+            td
+            {
+                border-left: 0px none;
+                border-right: 0px none;
+            }
+            tr{
+                text-align: center;
+            }
+            tr:nth-child(odd){
+                background-color:#e6f2ff;
+            }
+            tr:nth-child(even){
+                background-color:#e6e6e6;
+            }
+            body{
+                    background-image:url("images/ebg.png");
+                    background-size:100%; 
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                }
+                #head{
+  overflow: hidden; 
+  border-right: .15em; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  font-size: 40px;
+  background: -webkit-linear-gradient(#c2f556, #22d4c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+            </style>
+        </head>
+        <body>
+            <br/><br/>
+            <h1 id="head">Sales Prediction</h1>
+            <table border=0 cellpadding="0px" cellspacing="0px">
+                <tr id="head1">
+                    <td><b>Day</b></td>
+                    <td><b>Sales in KG</b></td>
+                </tr>
+            <% predicted.forEach(function(predicted){ %>
+                <tr>
+                    <td><%= predicted[0] %></td>
+                    <td><%= predicted[1] %></td>
+                </tr>
+            <% }) %>
+        </table>
+        </body>
+    </html>

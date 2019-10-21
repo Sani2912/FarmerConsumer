@@ -1,0 +1,25 @@
+Linear Regression is algorithm which is used to predict continous values based on previous data.This is Supervised Machine learning algorithm.
+It finds linear relationship between variables.Based on it tries to predict new values.
+Algorithm:
+1.Take all the Features(Independent Values).
+2.Preprocess the Data.
+3.Divide data into train and test data.
+4.Build a linear regression Model.
+5.Train the model with train data.
+6.Evaluate model with test data.
+7.Parameter Tuning(Generally done by changing number of training steps,Learning rate,intialization values and distribution).
+8.Predict the values.
+
+Polynomial Regression is also used to predict continous values based on data. This is also supervised algorithm.
+But here it finds polynomial type of relationship between variables instead of linear relationship.Based on the trained model it tries to predict new values.
+Algorithm:
+1.Take all the Features(Independent Values).
+2.Preprocess the Data.
+3.Divide data into train and test data.
+4.Build a polynomial regression Model.
+5.Train the model with train data.
+6.Evaluate model with test data.
+7.Parameter Tuning(Generally done by changing number of training steps,Learning rate,intialization values and distribution).
+8.Predict the values.
+
+
