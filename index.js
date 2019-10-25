@@ -5,7 +5,6 @@ var MongoClient=require('mongodb').MongoClient;
 var urlencoded=bodyparser.urlencoded({extended:true});
 var port = process.env.PORT || 3000;
 var regression=require('regression');
-var plotlib=require('nodeplotlib');
 
 var app=express();
 app.set('view engine', 'ejs');
@@ -506,7 +505,6 @@ app.post("/predict",urlencoded,function(req,res){
                     y.push(prediction[i][1]);
                 }
                  const data = [{x:x, y:y, type: 'scatter',name:"Predicted Sales of next weeek"}];
-                 plotlib.plot(data);
                  res.render('predictr',{predicted:prediction});
             }
             else{
@@ -517,7 +515,6 @@ app.post("/predict",urlencoded,function(req,res){
                     y.push(prediction[i][1]);
                 }
                 const data = [{x:x, y:y, type: 'scatter',name:"Predicted Sales of next weeek"}];
-                plotlib.plot(data);
                 res.render('predictr',{predicted:prediction});
             }
         }
