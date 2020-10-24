@@ -22,12 +22,8 @@
                     border-radius: 20px;
                 }
                 body{
-                    background-image:url("images/ebg.png");
-                    background-size:100%; 
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                    background-attachment: fixed;
-                }
+    background-image: linear-gradient(to right, #f48aff, #c771ed, #985bda, #6347c6, #0e35b2);
+}
                 #sign{
                     margin-top: 80px;
                     margin-left: 60px;
@@ -99,7 +95,7 @@
     height: 40px;
     width:100px;
     border-radius: 10px;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background-color:#BF529B;
     border:0;
                 }
                 a{
@@ -156,14 +152,14 @@
                 <h1 id="formhead">REGISTRATION INFO</h1><br/>
                 <form action="/registerdo" method="POST">
                     <input type="text" placeholder="Your Name" id="name" name="name" required><br/><br/><br/>
-                    <input type="email" placeholder="Email Address" id="mail" name="mail" required>
-                    <input type="number" placeholder="Mobile Number" id="num" name="num" required><br/><br><br/>
+                    <input type="text" placeholder="Mobile Number" id="mail" name="mail" required>
+                    <input type="email" placeholder="Email Address" id="num" name="num" required><br/><br><br/>
                     <input type="password" placeholder="Password" id="passwd" name="passwd" required><br/><br><br/>
                     <p id="loc">Location Access</p><input type="checkbox" id="check" name="check" onchange="initGeolocation();" required><br/><br><br/>
                     <INPUT TYPE="text" NAME="long" ID="long" VALUE="">
                     <INPUT TYPE="text" NAME="lat" ID="lat" VALUE="">
                     <input type="submit" id="submit" name="submit">
-                    Alredy have an account ?<a href="login"><b> Login Here</b></a>
+                    &nbsp Existing user? <a href="login"><b>Login</b></a>
                 </form>
                 </div>
             </div>

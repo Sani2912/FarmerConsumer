@@ -72,6 +72,7 @@ app.post('/logindo',urlencoded,function(req,res){
                 db.collection('users').find(query).toArray(function(err,result1){
                     if(err) throw err;
                     details.unshift(result1[0]);
+                    // console.log(details[0]);
                     res.render('mainapp',details[0]);
                 });
             }
@@ -159,6 +160,7 @@ app.post('/list',urlencoded,function(req,res){
             result.unshift({lon:lon1});
             result.unshift({lat:lat1});
             //res.send(result);
+            // console.log(result);
             res.render('mainconsumer',{products:result});
         });
     });

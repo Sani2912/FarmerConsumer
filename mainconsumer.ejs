@@ -4,9 +4,14 @@
             <title>Customer</title>
             <meta charset="utf-8">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
             <script>
                 function call(){
-                    var a=document.getElementById("option").value;
+                    var a=document.getElementById("exampleFormControlSelect1").value;
                     if(a==2){
                         document.getElementById("form2").submit();
                     }
@@ -14,13 +19,14 @@
                         document.getElementById("form1").submit();
                     }
                 }
+                window.onload = function(){
+                    $("#name").html(localStorage.name);
+                }
             </script>
             <style>
                 body{
-                    background-attachment: fixed;
-                    background-size:100%;
-                    background-image:url("https://i.imgur.com/QNSEwNs.png");
-                }
+    background-image: linear-gradient(to right, #f48aff, #c771ed, #985bda, #6347c6, #0e35b2);
+}
                 #productlist{
                     background-attachment: fixed;
                     background-size:100%;
@@ -37,7 +43,7 @@
                     height: 40px;
                     width:100px;
                     border-radius: 10px;
-                    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+                    background-color:#BF529B;
                     border:0;
                 }
                 #headim{
@@ -51,10 +57,10 @@
                    position: fixed;
                 }
                 #search{
-                    border-radius: 20px;
+                    /* border-radius: 20px; */
                     border:0;
-                    height:30px;
-                    width:400px;
+                    /* height:30px;
+                    width:400px; */
                 }
                 form{
                     overflow: hidden;
@@ -79,10 +85,10 @@
                 .search .fa-search { 
                 position: absolute;
                 top: 8px;
-                left: 760px;
+                /* left: 760px; */
                 }
                 #search{
-                    margin-left:750px; 
+                    /* margin-left:750px;  */
                 }
                 #option{
                     margin-left: 1250px;
@@ -104,28 +110,77 @@
                 }
                 #quan{
                     border-radius: 10px;
-                    border:0;
+                    /* border:0; */
                     padding:5px;
                     background-color:#f2f2f2 ;
                 }
             </style>
         </head>
         <body>
+            <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="javascript:void(0);" onclick="reloader()" style="margin-left: 10vw;font-size:x-large;">Farmer To Consumer</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="shop">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
+                    </li>
+                  </ul> -->    
+                  <form class="form-inline my-2 my-lg-0" id="form" action="search" method="POST" style="margin-left:1vw;margin-top:30px;">
+                    <!-- <form class="form-inline my-2 my-lg-0" action="search" id="form" method="POST"> -->
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search for products" id="search" style="width: 40vw;" name="search">
+                        <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
+                        <input type="hidden" name="longitude" value=<%= products[1].lon %>>
+                    </form>  
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                  <!-- </form> -->
+                </div>
+              <ul class="navbar-nav " style="margin-right:30px;">
+                <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" style="color: white;" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="username" style="font-size: 20px;"><i class="fas fa-user" style="font-size: 17px;"></i> <span id="name"></span></span>
+                  </a>
+                  
+                    <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" onClick="(function(){
+                          location.href = '/login';
+                          return false;
+                      })();return false;" style="cursor: pointer;">Logout</a>
+                    </div>
+                </li>
+            </ul>
+              </nav>
             <p id="topd">
                 <div class="search">
-                        <img src="images/final.png" id="logo">
-                        <form action="search" id="form" method="POST">
+                        <!-- <img src="images/final.png" id="logo"> -->
+                        <!-- <form action="search" id="form" method="POST">
                 <span class="fa fa-search"></span><input type="text" name="search" id="search" placeholder="Search item">
                 <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
                 <input type="hidden" name="longitude" value=<%= products[1].lon %>>
-            </form>  
+            </form>   -->
             </div>
-            <br/>
-            <select onchange="call()" id="option" label="sort by">
+            <br/><br/><br/>
+            <!-- <select onchange="call()" id="option" label="sort by">
                     <option value="1" hidden>Sort By</option>
                     <option value="2">Sort By price</option>
                     <option value="3">Sort By Distance</option>
-            </select>
+            </select> -->
+            <div class="form-group">
+                <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                <select class="form-control" id="exampleFormControlSelect1" onchange="call()" style="width: 20vw;margin-left: 7vw;">
+                    <option value="1" hidden>Sort By</option>
+                    <option value="2">Sort By price</option>
+                    <option value="3">Sort By Distance</option>
+                </select>
+              </div>
         </p>
             <form action="list" method="POST" id="form1">
                     <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
@@ -135,10 +190,29 @@
                     <input type="hidden" name="latitude" id="latitude" value=<%= products[0].lat %>>
                     <input type="hidden" name="longitude" value=<%= products[1].lon %>>
             </form>
-            <%- include("E:/FarmerConsumer/functions.ejs") %>
+            <%- include("functions.ejs") %>
             <% del(products) %>
             <% products.forEach(function(products){ %>
-                <div id="productlist">
+                <div class="card  text-center" style="width:25rem;display: inline-block; background-color:#f2f2f2;border-radius:30px;border:0px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left:3vw;margin-top: 5vh;">
+                    <!-- <img src="images/farmin.jpg" class="card-img-top" style="border-top-left-radius:30px;border-top-right-radius:30px;" height="300px" alt="..."> -->
+                    <div class="card-body">
+                        <h4 class="card-title" style="margin-top:10px;"><b><%= products.product %></b></h4>
+                        <div class="popup"  onclick="myFunction('${i}')"><h5>Price per KG-<%= products.price %> Rs</h5><br/>
+                  </div>
+                  Seller - <%= products.email %> <br/>    
+                  Distance - <%= products.distance %>km<br/><br/>
+                  Quantity(Minimum <%= products.mq %>KG)<br/><br/>
+                  <form action="buy" method="POST">
+                    <input type="hidden" name="farmer" id="farmer" value=<%= products.email %>>
+                    <input type="hidden" name="product" value=<%= products.product %>>
+                    <input type="hidden" name="price" value=<%= products.price %>>
+                    <input type="hidden" name="mq" value=<%= products.mq %>>
+                    <input type="number" name="quan" id="quan" placeholder="In KG">
+                    <input type="submit" style="background-color:#BF529B;color: white;" value="Buy Now➜">
+                </form>
+                  <!-- <a href="javascript:void(0);" onclick="hidesub()" class="btn btn-primary" style="background-color:#BF529B;border:0px;padding:10px;padding-left:25px;padding-right:25px;border-radius:50px;margin-right:0px;margin-top: 10px;" id="targetIcon-${i}">Go</a> -->
+                </div></div>
+                <!-- <div id="productlist">
                     <h1><%= products.product %></h1> 
                     <h2>Price per KG-<%= products.price %> Rs</h2><br/>
                     Seller - <%= products.email %> <br/>    
@@ -152,7 +226,7 @@
                         <input type="number" name="quan" id="quan" placeholder="In KG">
                         <input type="submit" value="Buy Now➜">
                     </form>
-                </div>
+                </div> -->
             <% }) %> 
         </body>
     </html>
