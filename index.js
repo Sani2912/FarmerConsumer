@@ -408,6 +408,9 @@ app.post("/buy",urlencoded,function(req,res){
     if(quantity<mq){
         res.sendFile(__dirname+"/nomin.html");
     }
+    else if(quantity > 50){
+        res.sendFile(__dirname+"/maxreached.html");
+    }
     else{
              MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
              if(err) throw err;
