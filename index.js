@@ -35,7 +35,7 @@ app.post('/registerdo',urlencoded,function(req,res){
     details={
         name:a,email:b,number:c,password:d,longitude:f,latitude:g,products:[]
     };
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         query={email:b};
@@ -57,7 +57,7 @@ app.post('/logindo',urlencoded,function(req,res){
     var a=req.body.email;
     var b=req.body.passwd;
     var c=req.body.name;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         query={email:a};
@@ -98,7 +98,7 @@ app.post("/addp",urlencoded,function(req,res){
     var products=[];
     var sales={};
     store={product,mq,tq,price,email,lat,long,sales};
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('users').find({email:email}).toArray(function(err,result){
@@ -120,7 +120,7 @@ app.post('/list',urlencoded,function(req,res){
     var lat1=req.body.latitude;
     var lon1=req.body.longitude;
     var lat2,lon2;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('products').find().toArray(function(err,result){
@@ -170,7 +170,7 @@ app.post('/listsort',urlencoded,function(req,res){
     var lat1=req.body.latitude;
     var lon1=req.body.longitude;
     var lat2,lon2;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('products').find().toArray(function(err,result){
@@ -242,7 +242,7 @@ app.post('/search',urlencoded,function(req,res){
     var lon1=req.body.longitude;
     var search=req.body.search;
     var lat2,lon2;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('products').find().toArray(function(err,result){
@@ -297,7 +297,7 @@ app.post('/listsort1',urlencoded,function(req,res){
     var lon1=req.body.longitude;
     var search=req.body.search;
     var lat2,lon2;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('products').find().toArray(function(err,result){
@@ -370,7 +370,7 @@ app.post('/listsort1',urlencoded,function(req,res){
 app.post('/deletep',urlencoded,function(req,res){
     var a=req.body.product;
     var b=req.body.farmer;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('users').find({email:b}).toArray(function(err,result){
@@ -412,7 +412,7 @@ app.post("/buy",urlencoded,function(req,res){
         res.sendFile(__dirname+"/maxreached.html");
     }
     else{
-             MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+             MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
              if(err) throw err;
              var db=db.db('farmerlogindb');
                    db.collection('products').find({product:product,email:email}).toArray(function(err,result){
@@ -445,7 +445,7 @@ app.post("/buy",urlencoded,function(req,res){
             });
         });
     }
-    // MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    // MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
     //     if(err) throw err;
     //     var db=db.db('farmerlogindb');
     //     db.collection('users').find({email:email}).toArray(function(err,result){
@@ -466,7 +466,7 @@ app.post("/buy",urlencoded,function(req,res){
 app.post("/predict",urlencoded,function(req,res){
     var product=req.body.product;
     var email=req.body.farmer;
-    MongoClient.connect('mongodb+srv://harsha:harsha@harsha1-ashl9.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
+    MongoClient.connect('mongodb://harsha:harsha@harsha1-shard-00-00.ashl9.mongodb.net:27017,harsha1-shard-00-01.ashl9.mongodb.net:27017,harsha1-shard-00-02.ashl9.mongodb.net:27017/test?ssl=true&replicaSet=harsha1-shard-0&authSource=admin&retryWrites=true&w=majority',{ useNewUrlParser: true },function(err,db){
         if(err) throw err;
         var db=db.db('farmerlogindb');
         db.collection('products').find({product:product,email:email}).toArray(function(err,result){
