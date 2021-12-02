@@ -1,12 +1,12 @@
 {
   "name": "farmerconsumer",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "mongodb": "^3.3.0-beta2",
+    "mongoose": "^6.0.14",
     "nodeplotlib": "^0.6.4",
     "regression": "^2.0.1"
   },
@@ -16,5 +16,7 @@
     "start": "node index.js"
   },
   "author": "Harsha",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
 }
