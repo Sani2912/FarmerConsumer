@@ -13,10 +13,12 @@
   "devDependencies": {},
   "scripts": {
     "test": "node index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Harsha",
+  "author": "Satyaki",
   "license": "ISC",
   "keywords": [],
   "description": ""
 }
+
